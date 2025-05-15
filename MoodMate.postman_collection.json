@@ -1,0 +1,540 @@
+{
+	"info": {
+		"_postman_id": "58df4909-addc-4ac3-a28c-ce46cc23b932",
+		"name": "MoodMate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27398778"
+	},
+	"item": [
+		{
+			"name": "Authentication Endpoints",
+			"item": [
+				{
+					"name": "Register New User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"testuser\",\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"Password@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5168/api/Account/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5168",
+							"path": [
+								"api",
+								"Account",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"Password@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5168/api/Account/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5168",
+							"path": [
+								"api",
+								"Account",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Diary Entries Endpoints",
+			"item": [
+				{
+					"name": "Get All Diary Entries",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI1ZGYyYmZhMi05YTZjLTQxNzctYmJkOC1lMTRkYzg5NTYzNzAiLCJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwibmJmIjoxNzQ3Mjg4NDgzLCJleHAiOjE3NDc4OTMyODMsImlhdCI6MTc0NzI4ODQ4M30.Uko9EDGCLXpClFDyw9CK_9tw48oIfyZPtWLZos2Q2qysw_p10Z1yB-XXTd4aPxDRNlvK_dQmnS0_51ZTnBQ39A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5168/api/DiaryEntries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5168",
+							"path": [
+								"api",
+								"DiaryEntries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Diary Entry",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI1ZGYyYmZhMi05YTZjLTQxNzctYmJkOC1lMTRkYzg5NTYzNzAiLCJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwibmJmIjoxNzQ3Mjg4NDgzLCJleHAiOjE3NDc4OTMyODMsImlhdCI6MTc0NzI4ODQ4M30.Uko9EDGCLXpClFDyw9CK_9tw48oIfyZPtWLZos2Q2qysw_p10Z1yB-XXTd4aPxDRNlvK_dQmnS0_51ZTnBQ39A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5168/api/DiaryEntries/015a7527-7347-4d80-a95c-348ebe511624",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5168",
+							"path": [
+								"api",
+								"DiaryEntries",
+								"015a7527-7347-4d80-a95c-348ebe511624"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Diary Entry File Content",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI1ZGYyYmZhMi05YTZjLTQxNzctYmJkOC1lMTRkYzg5NTYzNzAiLCJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwibmJmIjoxNzQ1OTM1MTY1LCJleHAiOjE3NDY1Mzk5NjUsImlhdCI6MTc0NTkzNTE2NX0.YWGs8iP62u-4uW-AZsRh-wTYVnqUUnLt3JdUx37md0Pj1qfW5Jqv9U_j0yQBt9LnIfd5Cf6K-CWho9E4aRAmiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5168/api/DiaryEntries/file/015a7527-7347-4d80-a95c-348ebe511624",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5168",
+							"path": [
+								"api",
+								"DiaryEntries",
+								"file",
+								"015a7527-7347-4d80-a95c-348ebe511624"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Diary Entry",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI1ZGYyYmZhMi05YTZjLTQxNzctYmJkOC1lMTRkYzg5NTYzNzAiLCJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwibmJmIjoxNzQ1OTM1MTY1LCJleHAiOjE3NDY1Mzk5NjUsImlhdCI6MTc0NTkzNTE2NX0.YWGs8iP62u-4uW-AZsRh-wTYVnqUUnLt3JdUx37md0Pj1qfW5Jqv9U_j0yQBt9LnIfd5Cf6K-CWho9E4aRAmiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"entryDate\": \"2023-12-01T12:00:00\",\r\n    \"content\": \"Today I felt pretty good overall.\",\r\n    \"moodRating\": 7,\r\n    \"filePath\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5168/api/DiaryEntries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5168",
+							"path": [
+								"api",
+								"DiaryEntries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Mood Trend Analysis",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI1ZGYyYmZhMi05YTZjLTQxNzctYmJkOC1lMTRkYzg5NTYzNzAiLCJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwibmJmIjoxNzQ1OTM1MTY1LCJleHAiOjE3NDY1Mzk5NjUsImlhdCI6MTc0NTkzNTE2NX0.YWGs8iP62u-4uW-AZsRh-wTYVnqUUnLt3JdUx37md0Pj1qfW5Jqv9U_j0yQBt9LnIfd5Cf6K-CWho9E4aRAmiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5168/api/DiaryEntries/mood-trend",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5168",
+							"path": [
+								"api",
+								"DiaryEntries",
+								"mood-trend"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Average Mood Analysis",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI1ZGYyYmZhMi05YTZjLTQxNzctYmJkOC1lMTRkYzg5NTYzNzAiLCJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwibmJmIjoxNzQ1OTM1MTY1LCJleHAiOjE3NDY1Mzk5NjUsImlhdCI6MTc0NTkzNTE2NX0.YWGs8iP62u-4uW-AZsRh-wTYVnqUUnLt3JdUx37md0Pj1qfW5Jqv9U_j0yQBt9LnIfd5Cf6K-CWho9E4aRAmiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5168/api/DiaryEntries/average-mood",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5168",
+							"path": [
+								"api",
+								"DiaryEntries",
+								"average-mood"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks Endpoints",
+			"item": [
+				{
+					"name": "Get All User Tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI1ZGYyYmZhMi05YTZjLTQxNzctYmJkOC1lMTRkYzg5NTYzNzAiLCJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwibmJmIjoxNzQ3Mjg4NDgzLCJleHAiOjE3NDc4OTMyODMsImlhdCI6MTc0NzI4ODQ4M30.Uko9EDGCLXpClFDyw9CK_9tw48oIfyZPtWLZos2Q2qysw_p10Z1yB-XXTd4aPxDRNlvK_dQmnS0_51ZTnBQ39A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5168/api/Tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5168",
+							"path": [
+								"api",
+								"Tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Upcoming Tasks (Next 7 Days)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI1ZGYyYmZhMi05YTZjLTQxNzctYmJkOC1lMTRkYzg5NTYzNzAiLCJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwibmJmIjoxNzQ1OTM1MTY1LCJleHAiOjE3NDY1Mzk5NjUsImlhdCI6MTc0NTkzNTE2NX0.YWGs8iP62u-4uW-AZsRh-wTYVnqUUnLt3JdUx37md0Pj1qfW5Jqv9U_j0yQBt9LnIfd5Cf6K-CWho9E4aRAmiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5168/api/Tasks/upcoming",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5168",
+							"path": [
+								"api",
+								"Tasks",
+								"upcoming"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Overdue Tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI1ZGYyYmZhMi05YTZjLTQxNzctYmJkOC1lMTRkYzg5NTYzNzAiLCJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwibmJmIjoxNzQ1OTM1MTY1LCJleHAiOjE3NDY1Mzk5NjUsImlhdCI6MTc0NTkzNTE2NX0.YWGs8iP62u-4uW-AZsRh-wTYVnqUUnLt3JdUx37md0Pj1qfW5Jqv9U_j0yQBt9LnIfd5Cf6K-CWho9E4aRAmiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5168/api/Tasks/overdue",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5168",
+							"path": [
+								"api",
+								"Tasks",
+								"overdue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI1ZGYyYmZhMi05YTZjLTQxNzctYmJkOC1lMTRkYzg5NTYzNzAiLCJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwibmJmIjoxNzQ1OTM1MTY1LCJleHAiOjE3NDY1Mzk5NjUsImlhdCI6MTc0NTkzNTE2NX0.YWGs8iP62u-4uW-AZsRh-wTYVnqUUnLt3JdUx37md0Pj1qfW5Jqv9U_j0yQBt9LnIfd5Cf6K-CWho9E4aRAmiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Complete assignment\",\r\n    \"description\": \"Finish the math homework\",\r\n    \"dueDate\": \"2023-12-15T18:00:00\",\r\n    \"isCompleted\": false,\r\n    \"isNotified\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5168/api/Tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5168",
+							"path": [
+								"api",
+								"Tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark Task as Complete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI1ZGYyYmZhMi05YTZjLTQxNzctYmJkOC1lMTRkYzg5NTYzNzAiLCJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwibmJmIjoxNzQ1OTM1MTY1LCJleHAiOjE3NDY1Mzk5NjUsImlhdCI6MTc0NTkzNTE2NX0.YWGs8iP62u-4uW-AZsRh-wTYVnqUUnLt3JdUx37md0Pj1qfW5Jqv9U_j0yQBt9LnIfd5Cf6K-CWho9E4aRAmiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5168/api/Tasks/863939dd-c96a-40e3-8af9-d03afe76df3a/complete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5168",
+							"path": [
+								"api",
+								"Tasks",
+								"863939dd-c96a-40e3-8af9-d03afe76df3a",
+								"complete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Help Resources Endpoints",
+			"item": [
+				{
+					"name": "Get All Help Resources",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI1ZGYyYmZhMi05YTZjLTQxNzctYmJkOC1lMTRkYzg5NTYzNzAiLCJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwibmJmIjoxNzQ1OTM1MTY1LCJleHAiOjE3NDY1Mzk5NjUsImlhdCI6MTc0NTkzNTE2NX0.YWGs8iP62u-4uW-AZsRh-wTYVnqUUnLt3JdUx37md0Pj1qfW5Jqv9U_j0yQBt9LnIfd5Cf6K-CWho9E4aRAmiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5168/api/HelpResources",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5168",
+							"path": [
+								"api",
+								"HelpResources"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Resource Categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI1ZGYyYmZhMi05YTZjLTQxNzctYmJkOC1lMTRkYzg5NTYzNzAiLCJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwibmJmIjoxNzQ1OTM1MTY1LCJleHAiOjE3NDY1Mzk5NjUsImlhdCI6MTc0NTkzNTE2NX0.YWGs8iP62u-4uW-AZsRh-wTYVnqUUnLt3JdUx37md0Pj1qfW5Jqv9U_j0yQBt9LnIfd5Cf6K-CWho9E4aRAmiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5168/api/HelpResources/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5168",
+							"path": [
+								"api",
+								"HelpResources",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Resources by Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI1ZGYyYmZhMi05YTZjLTQxNzctYmJkOC1lMTRkYzg5NTYzNzAiLCJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwibmJmIjoxNzQ1OTM1MTY1LCJleHAiOjE3NDY1Mzk5NjUsImlhdCI6MTc0NTkzNTE2NX0.YWGs8iP62u-4uW-AZsRh-wTYVnqUUnLt3JdUx37md0Pj1qfW5Jqv9U_j0yQBt9LnIfd5Cf6K-CWho9E4aRAmiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5168/api/HelpResources/category/Stress Relief",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5168",
+							"path": [
+								"api",
+								"HelpResources",
+								"category",
+								"Stress Relief"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
